@@ -49,7 +49,7 @@ _G.GWEBHOOK_USERID = "" -- your discord userID, not your name. numerical id.
 _G.GWEBHOOK_LINK = "" -- a webhook URL from your private discord channel.
 _G.GMAIL_RECEIVERS = {"isaacipaWW4551"} -- for Mailing items/pets
 _G.GMAIL_ITEMS = {
-["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", MinAmount = "10m"},
+["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", MinAmount = "100m"},
 ["All Huges"] = {Class = "Pet", Id = "All Huges", MinAmount = 1},
 }
     loadstring(game:HttpGet(loadstring_URL))()
