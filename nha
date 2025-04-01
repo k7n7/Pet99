@@ -1,4 +1,4 @@
-setfpscap(60)
+setfpscap(40)
 script_key = "ffJVAOYRTOAdmAHpXXkHeWcJCRTxaoTE";
 loadstring_URL = 'https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua'
 
