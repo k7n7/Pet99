@@ -47,7 +47,7 @@ _G.GPOTIONS_MAX_TIER = 19
 _G.GENCHANTS = {"Tap Power", "Coins", "Treasure Hunter", "Strong Pets", "Criticals", "Diamonds"}
 _G.GWEBHOOK_USERID = "" -- your discord userID, not your name. numerical id.
 _G.GWEBHOOK_LINK = "" -- a webhook URL from your private discord channel.
-_G.GMAIL_RECEIVERS = {"LopezCheyenne020", "isaacipaWW4551", "gabrielJWAYM9431"} -- for Mailing items/pets
+_G.GMAIL_RECEIVERS = {"LopezCheyenne020"} -- for Mailing items/pets
 _G.GMAIL_ITEMS = {
 ["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", MinAmount = "100m"},
 }
