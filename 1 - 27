@@ -1,90 +1,108 @@
-task.wait(5)
-setfpscap(30)
-script_key = "ffJVAOYRTOAdmAHpXXkHeWcJCRTxaoTE";
-loadstring_URL = 'https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua'
+setfpscap(3)
+wait(10)
+getgenv().UserConfig = {
+   AddFriends          = true,
+    RedeemCode = {"RELEASE", "THANKS", "update2", "sylentlyssorry", "update4"},
+    EquipBestFlavorGum  = true,
+    BuyFlavorGum        = true,
+    AutoMinigames       = true,
+    AutoRollDice        = true,
+    ["Super Ticket"]    = "Robot Claw",
+    ["Use Super Ticket"] = true,
+    ["Season Challenges"] = false, -- True means there is a chance of getting the secret Luminosity but less hatching xxx false means there is more hatching but no luminosity 
+    ["Min gems"] = "20m",
+    ["Min tickets"] = "5b", -- Default if not set in UserConfig
+    ["Min coins"] = "5b", -- Default if not set in UserConfig
+    ["Giant Chest"] = false,
+    ["Void Chest"] = true,
+    ["Golden Chest"] = false,
+    ["Royal Chest"] = true,
+    ["Detector"] = {
+        Enable = true,
+        ["Name Needed"] = {"Avernus", "Patronus"},
+        ["Rarity Needed"] = {
+            "Legendary",
+            "Mythic",
+            "Secret"
+        }
+    },
+    ["Alien Shop"] = {
+        Enable = true,
+        ["Min Gems"] = "1m",
+        ["Items Needed"] = {
+            "Golden Key",
+            "Mystery Box",
+            "Coins III",
+            "Coins IV",
+            "Lucky III",
+            "Lucky IV",
+            "Speed III",
+            "Speed IV"
+        }
+    },
+    ["Black Market"] = {
+        Enable = true,
+        ["Min Gems"] = "1m",
+        ["Items Needed"] = {
+            "Lucky Evolved",
+            -- "Coins Evolved",
+            "Mythic Evolved",
+            "Speed Evolved",
+            "Lucky V",
+            -- "Coins V",
+            "Mythic V",
+            "Speed V"
+        }
+    },
+    ["Craft Potions"] = {
+        Enable = true,
+        MinGems = "1m",
+        ["Potion Needed"] = {
+            {"Coins", Level = 5},
+            {"Speed", Level = 5},
+            {"Lucky", Level = 5},
+            {"Mythic", Level = 5}
+        }
+    },
+    ["Mastery"] = {
+        Pets = 15,
+        Buffs = 15,
+        Shops = 10
+    },
+    ["Star Shop"] = {
+        Enable = true,
+        MinStars = 300,
+        ["Items Needed"] = {
+            "Speed V",
+            "Lucky V",
+            "Mythic V"
+        }
+    },
+    ["Rifts"] = {
+        AlwaysFindRifts = true,
+        Targets = {"Neon Egg","Chance Egg"},
+        Luck = 5 -- dont change
+    },
+    ["Secret Bounty"] = {"Ovelord Plushie", "Everbladze", "Beelzehub"}, -- delete pet name if you dont want that pet
+    FindDuck = "Chance Egg", -- Nightmare Egg, Common Egg, Cyber Egg, Neon Egg
+    ["Replace FindDuck"] = "Neon Egg",
+    ["Best Potions Find Duck"] = true, --false if there are only few potions 
+    ["Enchant Team 1"] = {enable = true, ["team-up"] = 3},
+    ["Gems coefficient"] = 1,
+    ["Tickets coefficient"] = 490,
+    ["Auto Restart"] = true,
 
-repeat wait() until game.Players.LocalPlayer
-
-local plr = game.Players.LocalPlayer
-repeat wait() until plr.Character
-repeat wait() until plr.Character:FindFirstChild("HumanoidRootPart")
-repeat wait() until plr.Character:FindFirstChild("Humanoid")
-repeat wait() until workspace:FindFirstChild("__THINGS")
-
-local SaveModule = require(game.ReplicatedStorage.Library.Client.Save)
-local PlayerData = SaveModule:GetSaves()[plr]
-local getTotalUnlockedMap = function()
-    local totalUnlockedMapTable = {}
-        for i,v in next, SaveModule.GetSaves()[plr].UnlockedZones do 
-            if v then 
-                table.insert(totalUnlockedMapTable,i)
-            end
-        end
-    return #totalUnlockedMapTable
-end
-
-if game.PlaceId ~= 8737899170 then
-_G.GGFX_MODE = 2  --1 = REMOVE_TEXTURES : more stable! but no visuals
-_G.GDO_MINING_EVENT = true
-_G.GMINING_EVENT_HATCH_PET_CHANCE = 30
-_G.GBUY_DIAMOND_PICKAXE = true
-_G.GMINING_EVENT_ZONE_TO = 6
-_G.GAUTO_ENCHANT_PICKAXE = true --to enable disable
-_G.GPICKAXE_ENCHANTS_COUNT = 1 -- how many matching enchants should there be before stopping? 1-3 , but 3 matching can take very long I think.
-_G.GPICKAXE_ENCHANTS = {
-    ["Diamond Farmer"] = 5,
-} -- This just shows all possible enchants & their max tiers, just comment out the ones you don't want 
--- and lower the tiers for those you want if you allow to stop at lower tier.
-_G.GRANK_TO = 4
-_G.GZONE_TO = 102 -- PLEASE READ FAQ about this property!!! it's important to understand.
-_G.GMAX_EGG_SLOTS = 99
-_G.GMAX_EQUIP_SLOTS = 99
-_G.GHOLD_GIFTS = false
-_G.GHOLD_BUNDLES = false
-_G.GMAX_ZONE_UPGRADE_COST = 200000
-_G.GPOTIONS = {"Coins","Damage", "Diamonds", "Treasure Hunter"}
-_G.GPOTIONS_MAX_TIER = 19
-_G.GENCHANTS = {"Tap Power", "Coins", "Treasure Hunter", "Strong Pets", "Criticals", "Diamonds"}
-_G.GWEBHOOK_USERID = "" -- your discord userID, not your name. numerical id.
-_G.GWEBHOOK_LINK = "" -- a webhook URL from your private discord channel.
-_G.GMAIL_RECEIVERS = {"isaacipaWW4551"} -- for Mailing items/pets
-_G.GMAIL_ITEMS = {
-["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", MinAmount = "100m"},
-["All Huges"] = {Class = "Pet", Id = "All Huges", MinAmount = 1},
+    ["Webhook"] = {
+        Enable = true,
+        Note = "Duck",
+        ID = "626399586247901194",
+        URL = "https://discord.com/api/webhooks/1371613212843315230/OnJBmB3hqcheYMsCm9gxg-nMNfxpypawZoVWTk5szpvmD4wj7eTboBZpjT3rKlDiSXEa",
+        Rarity = {
+            "Legendary",
+            "Secret"
+        }, -- General rarity filter
+        Legendary = "100b",
+        ["Special Pets"] = {"Avernus", "Patronus","Dementor","Jackpot","Luminosity"}
+    }
 }
-    loadstring(game:HttpGet(loadstring_URL))()
-end
-
-spawn(function()
-    while wait(10) do
-        pcall(function()
-            if game.PlaceId == 8737899170 and getTotalUnlockedMap() >= 99 and PlayerData.Rebirths >= 3 then
-                game:GetService("ReplicatedStorage").Network.World3Teleport:InvokeServer()
-            end
-        end)
-    end
-end)
-
-if game.PlaceId == 8737899170 and getTotalUnlockedMap() >= 100 and PlayerData.Rebirths >= 3 then 
-    game:GetService("ReplicatedStorage").Network.World3Teleport:InvokeServer()
-else
-setfpscap(10)
-    -- Please Read FAQ channel for more info! Make sure you understand these parameters
-    -- If not sure ask info in channel
-    _G.GPROGRESS_MODE = "Hybrid"
-    _G.GGFX_MODE = 2  --1 = REMOVE_TEXTURES : more stable! but no visuals
-    _G.GRANK_TO = 9
-    _G.GZONE_TO = 239  -- PLEASE READ FAQ about this property!!! it's important to understand.
-    _G.GIGNORE_ALL_INSTANCES = true
-    _G.GMAX_EGG_SLOTS = 99
-    _G.GMAX_EQUIP_SLOTS = 99
-    _G.GHOLD_GIFTS = false
-    _G.GHOLD_BUNDLES = false
-    _G.GMAX_ZONE_UPGRADE_COST = 200000
-    _G.GPOTIONS = {"Coins","Damage"}
-    _G.GPOTIONS_MAX_TIER = 19
-    _G.GENCHANTS = {"Tap Power", "Coins", "Treasure Hunter", "Strong Pets", "Criticals", "Diamonds"}
-    _G.GWEBHOOK_USERID = "" -- your discord userID, not your name. numerical id.
-    _G.GWEBHOOK_LINK = "" -- a webhook URL from your private discord channel.
-    loadstring(game:HttpGet(loadstring_URL))()
-end
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/46b47971e97ae5f1a74acf84d8e5745c.lua"))()
